@@ -6,7 +6,7 @@ const url = 'mongodb://localhost/reddit-db';
 mongoose.connect(
   url,
   {
-    useNewUrlParser: true
+    useNewUrlParser: true, useUnifiedTopology: true,
   },
   function(err, db) {
     assert.equal(null, err);
@@ -16,6 +16,6 @@ mongoose.connect(
   }
 );
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection Error:'));
-mongoose.set('debug', true);
+//mongoose.set('debug', true);
 
 module.exports = mongoose.connection;
