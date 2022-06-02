@@ -20,4 +20,15 @@ module.exports = (app) => {
       console.log(err.message);
     }
   })
+
+    // LOOK UP THE POST
+  app.get('/posts/:id', async (req, res) => {
+
+    try {
+      const post = await Post.findById(req.params.id).lean()
+      return res.render('posts-show', {post})
+    } catch(err) {
+      console.log(err.message);
+    }
+  });
 }
