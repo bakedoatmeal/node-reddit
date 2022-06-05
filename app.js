@@ -1,8 +1,9 @@
 // Require Libraries
+require('dotenv').config();
+const cookieParser = require('cookie-parser');
 const express = require('express');
 const exphbs = require('express-handlebars');
 require('./data/reddit-db')
-
 // App Setup
 const app = express();
 // Middleware
@@ -10,10 +11,11 @@ app.engine('handlebars', exphbs.engine({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
+app.unsubscribe(cookieParser())
 
 const post = require('./controllers/posts')(app);
 require('./controllers/comments.js')(app);
-
+require('./controllers/auth.js')(app);
 // Routes
 
 // Start Server
