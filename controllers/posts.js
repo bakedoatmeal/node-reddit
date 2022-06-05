@@ -5,7 +5,6 @@ module.exports = (app) => {
   app.get('/', async (req, res) => {
     try {
       const posts = await Post.find({}).lean();
-      console.log(posts)
       return res.render('posts-index', {posts})
     } catch(err) {
       console.log(err.message);
@@ -25,7 +24,8 @@ module.exports = (app) => {
     // LOOK UP THE POST
   app.get('/posts/:id', async (req, res) => {
     try {
-      const post = await Post.findById(req.params.id).lean()
+      const post = await Post.findById(req.params.id).lean().populate('comments')
+      console.log(typeof post._id)
       return res.render('posts-show', {post})
     } catch(err) {
       console.log(err.message);
