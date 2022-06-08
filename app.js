@@ -14,6 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(cookieParser());
 app.use(checkAuth);
+app.use(express.static('public'));
 
 const post = require('./controllers/posts')(app);
 require('./controllers/comments.js')(app);
