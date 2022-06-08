@@ -47,7 +47,7 @@ module.exports = (app) => {
 
     const currentUser = req.user;
     try {
-      const post = await Post.findById(req.params.id).lean().populate('comments').populate('author')
+      const post = await Post.findById(req.params.id).lean().populate({ path:'comments', populate: { path: 'author' } }).populate('author')
       console.log(typeof post._id)
       return res.render('posts-show', {post, currentUser})
     } catch(err) {
