@@ -42,13 +42,14 @@ module.exports = (app) => {
       return res.status(401); //unauthorized
     }
   })
-    // LOOK UP THE POST
+    // SHOW - LOOK UP THE POST
   app.get('/posts/:id', async (req, res) => {
 
     const currentUser = req.user;
     try {
-      const post = await Post.findById(req.params.id).lean().populate({ path:'comments', populate: { path: 'author' } }).populate('author')
-      console.log(typeof post._id)
+      //const post = await Post.findById(req.params.id).lean().populate({ path:'comments', populate: { path: 'author' } }).populate('author')
+      const post = await Post.findById(req.params.id).populate('comments').lean()
+      //console.log(typeof post._id)
       return res.render('posts-show', {post, currentUser})
     } catch(err) {
       console.log(err.message);
@@ -59,7 +60,8 @@ module.exports = (app) => {
   app.get('/n/:subreddit', async (req, res) => {
     const currentUser = req.user;
     try {
-      const posts = await Post.find({subreddit: req.params.subreddit}).lean().populate('author')
+      //const posts = await Post.find({subreddit: req.params.subreddit}).lean().populate('author')
+      const posts = await Post.find({subreddit: req.params.subreddit}).lean()
       return res.render('posts-index', {posts, currentUser}) 
     } catch {
       console.log(err)
