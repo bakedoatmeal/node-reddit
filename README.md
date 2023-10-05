@@ -1,6 +1,6 @@
 # Reddit Clone Node App
 
-This is a simple Reddit clone Node.js application that uses MongoDB for data storage. [Deployed on CapRover](http://reddit-clone.devops.berrybakedoatmeal.com/)
+This is a simple Reddit clone Node.js application that uses MongoDB for data storage. [Deployed on CapRover](https://reddit-clone.devops.berrybakedoatmeal.com/)
 
 ## Getting Started
 
