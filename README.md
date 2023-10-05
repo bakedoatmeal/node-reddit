@@ -5,8 +5,6 @@ This is a simple Reddit clone Node.js application that uses MongoDB for data sto
 ## Getting Started
 
 ### Prerequisites
-
-- Node.js (v20.2.0 or higher)
 - Docker
 
 ### Status Page
