@@ -17,7 +17,8 @@ COPY . .
 EXPOSE 3000
 
 # Set environment variables (e.g., your SECRET)
-ENV SECRET=somehashvalue
+ENV SECRET=somehashvalue \
+    DATABASE_URL=mongodb://mongodb:27017/database
 
 # Use nodemon for development (install it globally)
 RUN npm install -g nodemon

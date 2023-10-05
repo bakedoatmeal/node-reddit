@@ -1,6 +1,6 @@
 # Reddit Clone Node App
 
-This is a simple Reddit clone Node.js application that uses MongoDB for data storage. Note it has not yet been styled.
+This is a simple Reddit clone Node.js application that uses MongoDB for data storage. [Deployed on CapRover](http://reddit-clone.devops.berrybakedoatmeal.com/)
 
 ## Getting Started
 
@@ -8,6 +8,12 @@ This is a simple Reddit clone Node.js application that uses MongoDB for data sto
 
 - Node.js (v20.2.0 or higher)
 - Docker
+
+### Status Page
+![Uptime Robot status](https://img.shields.io/uptimerobot/status/m795416254-0db1cb9d239b1b030774bef4) ![Website](https://img.shields.io/website?url=https%3A%2F%2Freddit-clone.devops.berrybakedoatmeal.com)
+
+
+[Check Status Here](https://stats.uptimerobot.com/DD69Afj3Nm)
 
 ### Installation
 
