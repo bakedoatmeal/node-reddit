@@ -15,6 +15,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(cookieParser());
 app.use(checkAuth);
 app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 const post = require('./controllers/posts')(app);
 require('./controllers/comments.js')(app);
