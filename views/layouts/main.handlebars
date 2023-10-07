@@ -3,9 +3,159 @@
   <head>
     <meta charset="utf-8">
     <title>Reddit.js</title>
-   <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <style>
+    /* Reset some default styles */
+    body, h1, h2, h3, p {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Define the color palette based on Reddit's colors */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5; /* Background color similar to Reddit */
+    }
+
+    .navbar {
+      background-color: #0079d3; /* Reddit's primary blue color */
+      color: white;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .container {
+      margin-top: 20px;
+    }
+
+    /* Style the navigation links */
+    .navbar-branch {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .navbar-branch:hover {
+      text-decoration: none;
+    }
+
+    .nav-item {
+      margin-right: 10px;
+    }
+
+    .nav-link {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* Style the login/signup links */
+    .navbar-right {
+      list-style: none;
+      margin-top: 15px;
+    }
+
+    .navbar-right li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    .navbar-right a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Style the main content */
+    .container {
+      background-color: white;
+      padding: 2gi0px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    /* Style buttons */
+    .btn-primary {
+      background-color: #0079d3; /* Reddit's primary blue color */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .btn-primary:hover {
+      background-color: #005fa3; /* Slightly darker blue on hover */
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .row {
+      margin: 20px 0;
+    }
+
+    /* Styling for individual posts */
+    .list-group-item {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #FFF;
+      border: 1px solid #DDD;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .list-group-item .lead {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .list-group-item a {
+      text-decoration: none;
+      color: #0079D3;
+    }
+
+    .list-group-item a:hover {
+      text-decoration: underline;
+    }
+
+    .list-group-item small {
+      color: #888;
+    }
+
+    .list-group-item .text-right {
+      text-align: right;
+    }
+
+    /* Styling for voting buttons */
+    .vote-up,
+    .vote-down {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .vote-up button,
+    .vote-down button {
+      background-color: #0079D3;
+      color: #FFF;
+      border: none;
+      border-radius: 3px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .vote-up button:hover,
+    .vote-down button:hover {
+      background-color: #005a9e;
+    }
+
+  </style>
   </head>
-  <body>
+  <body >
     <nav class="navbar">
       <div class="container-fluid">
         <a class="navbar-branch" href='/'>Reddit.js</a>
