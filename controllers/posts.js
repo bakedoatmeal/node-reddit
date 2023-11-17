@@ -1,5 +1,6 @@
 const Post = require('../models/post');
 const User = require('../models/user');
+const sanitizeHtml = require('sanitize-html');
 
 module.exports = (app) => {
 
@@ -23,6 +24,8 @@ module.exports = (app) => {
     if (req.user) {
       const userId = req.user._id;
       const post = new Post(req.body);
+      // sanitize HTML for summary
+      post.summary = sanitizeHtml(req.body.summary)
       post.author = userId;
       post.upVotes = [];
       post.downVotes = [];
